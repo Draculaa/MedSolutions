@@ -50,7 +50,22 @@ static NSString * const newsCellIdentifier = @"NewsTableCell";
         [wSelf.tableView reloadData];
 
     } onFailure:^(NSError *error, NSInteger *statusCode) {
-        NSLog(@"ERROR: %@", error);
+        NSLog(@"ERROR: %@", [error localizedDescription]);
+        UIAlertController * alert =   [UIAlertController
+                                      alertControllerWithTitle:@"Error"
+                                      message:[error localizedDescription]
+                                      preferredStyle:UIAlertControllerStyleAlert];       
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
     }];
 }
 
