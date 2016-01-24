@@ -18,6 +18,7 @@
         self.text = json[@"text"];
         self.newsId= [json[@"id"] integerValue];
         self.imageUrlString = json[@"image"];
+        self.source = json[@"source"];
     }
     return self;
 }

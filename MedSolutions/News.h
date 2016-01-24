@@ -13,6 +13,7 @@
 @property NSInteger newsId;
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * text;
+@property (nonatomic, strong) NSString * source;
 @property (nonatomic, strong) NSString * newsDescription;
 @property (nonatomic, strong) NSString * createdAt;
 @property (nonatomic, strong) NSString * imageUrlString;

@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *leadLabel;
 @property (strong, nonatomic) IBOutlet UITextView *newsTextView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *sourceLabel;
 
 - (void)configureView;
 

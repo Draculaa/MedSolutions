@@ -39,6 +39,8 @@ static NSString * const newsCellIdentifier = @"NewsTableCell";
     if (self.currentNews) {
         self.leadLabel.text = self.currentNews.title;
         self.newsTextView.text = self.currentNews.text;
+        self.sourceLabel.text = self.currentNews.source;
+        self.dateLabel.text = self.currentNews.createdAt;
         [self.newsImageView setImageWithURL:[NSURL URLWithString:self.currentNews.imageUrlString]];
     }
     if (self.spotlight.count > 0) {
@@ -55,6 +57,7 @@ static NSString * const newsCellIdentifier = @"NewsTableCell";
                                                         wSelf.spotlight = data[@"spotlight"];
                                                         wSelf.currentNews.text =  detailedNews.text;
                                                         wSelf.currentNews.title = detailedNews.title;
+                                                        wSelf.currentNews.source = detailedNews.source;
                                                         [wSelf reloadView];
                                                     } onFailure:^(NSError *error, NSInteger *statusCode) {
                                                         NSLog(@"ERROR: %@", error);
